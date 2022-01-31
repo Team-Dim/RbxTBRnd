@@ -1,0 +1,57 @@
+<script src="rbxtbrnd.js"></script>
+<link rel="stylesheet" href="rbxtbrnd.css">
+
+<button onclick='genMap()'>Generate random map</button>
+<span id='map'>Yes I want some UI designers</span>
+<hr>
+
+<p>Normal towers:</p>
+<table id='normal-towers'>
+    <tr>
+        <td><button onclick="flipTower(event, 0, 0)">Scout</button></td>
+        <td><button onclick="flipTower(event, 0, 1)">Fragger</button></td>
+        <td><button onclick="flipTower(event, 0, 2)">Snipper</button></td>
+        <td><button onclick="flipTower(event, 0, 3)">Shotgunner</button></td>
+        <td><button onclick="flipTower(event, 0, 4)">Cryo gunner</button></td>
+        <td><button onclick="flipTower(event, 0, 5)">Farm</button></td>
+        <td><button onclick="flipTower(event, 0, 6)">Soldier</button></td>
+        <td><button onclick="flipTower(event, 0, 7)">Tuber</button></td>
+        <td><button onclick="flipTower(event, 0, 8)">Mortar</button></td>
+        <td><button onclick="flipTower(event, 0, 9)">Patrol</button></td>
+        <td><button onclick="flipTower(event, 0, 10)">Enforcer</button></td>
+        <td><button onclick="flipTower(event, 0, 11)">Barracks</button></td>
+        <td><button onclick="flipTower(event, 0, 12)">Aviator</button></td>
+        <td><button onclick="flipTower(event, 0, 13)">Flamethrower</button></td>
+        <td><button onclick="flipTower(event, 0, 14)">Mercenary</button></td>
+        <td><button onclick="flipTower(event, 0, 15)">Marksman</button></td>
+    </tr>
+    <tr>
+        <td><button onclick="flipTower(event, 1, 0)">Commando</button></td>
+        <td><button onclick="flipTower(event, 1, 1)">Commander</button></td>
+        <td><button onclick="flipTower(event, 1, 2)">Anarchist</button></td>
+        <td><button onclick="flipTower(event, 1, 3)">DJ</button></td>
+        <td><button onclick="flipTower(event, 1, 4)">Railgunner</button></td>
+        <td><button onclick="flipTower(event, 1, 5)">Plasma Trooper</button></td>
+        <td><button onclick="flipTower(event, 1, 6)">Phaser</button></td>
+        <td><button onclick="flipTower(event, 1, 7)">Zed</button></td>
+    </tr>
+</table>
+<p>Event towers:</p>
+<table>
+    <tr>
+        <td><button>Tweeter</button></td>
+        <td><button>Scare crow</button></td>
+        <td><button>Elf</button></td>
+        <td><button>Hallowboomer</button></td>
+        <td><button>Sleeter</button></td>
+        <td><button>Resting Soldier</button></td>
+        <td><button>Graveyard</button></td>
+        <td><button>Snowballer</button></td>
+        <td><button>Monkey</button></td>
+        <td><button>Harpoon Hunter</button></td>
+    </tr>
+</table>
+<hr>
+
+<button onclick='genTowers()'>Generate random towers</button>
+<p id='towers'></p>

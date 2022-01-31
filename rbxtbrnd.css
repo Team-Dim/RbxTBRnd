@@ -1,0 +1,14 @@
+body {
+    background-color: wheat;
+}
+
+table {
+    background-color: #3969FF;
+    width: max-content;
+    align-items: center;
+}
+
+table button {
+    color: white;
+    margin: 1vmin;
+}
