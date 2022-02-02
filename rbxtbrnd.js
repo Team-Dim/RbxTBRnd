@@ -38,19 +38,50 @@ function setColor(button, enable) {
     button.style.background = enable ? '#44bd19' : '#b52b2b'
 }
 
-if (localStorage.tower === undefined) localStorage.tower = '\0\0\0'
-localStorage.tower = '\0\0\0'
+if (localStorage.normalTower === undefined) localStorage.normalTower = '\uFFFF\uFFFF'
+if (localStorage.eventTower === undefined) localStorage.eventTower = '\0'
 
 var towers = []
 
-function flipTower(event, pos, bit) {
-    let ascii = localStorage.tower.charCodeAt(pos)
+function initTower(tower, id) {
+    let pos = 0
+    for (let row of document.getElementById(id).rows) {
+        let cell_i = 0
+        for (let cell of row.cells) {
+            let enable = tower.charCodeAt(pos) & (1 << cell_i)
+            setColor(cell.firstChild, enable)
+            if (enable) towers.push(cell.firstChild.textContent)
+            cell_i++
+        }
+        pos++
+    }
+}
+
+function flipTower(event, pos, bit, isNormal = true) {
+    let tower = isNormal ? localStorage.normalTower : localStorage.eventTower
+    let ascii = tower.charCodeAt(pos)
     let cmp = 1 << bit
     ascii ^= cmp
     let enable = ascii & cmp
     setColor(event.target, enable)
     if (enable) towers.push(event.target.textContent)
     else towers.splice(towers.indexOf(event.target.textContent), 1);
-    localStorage.tower = setCharAt(localStorage.tower, pos, String.fromCharCode(ascii)) 
-    console.log(towers)
+    if (isNormal) localStorage.normalTower = setCharAt(tower, pos, String.fromCharCode(ascii))
+    else localStorage.eventTower = setCharAt(tower, pos, String.fromCharCode(ascii))
 }
+
+function genTowers() {
+    let tempTowers = [...towers]
+    let show = ''
+    for (let i = 0; i < 5; i++) {
+        let pick =  ~~(Math.random() * tempTowers.length)
+        show += tempTowers[pick] + '<br>'
+        tempTowers.splice(pick, 1)
+    }
+    document.getElementById('towers').innerHTML = show
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+    initTower(localStorage.normalTower, 'normal-towers')
+    initTower(localStorage.eventTower, 'event-towers')
+});
