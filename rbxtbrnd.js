@@ -39,7 +39,7 @@ function setColor(button, enable) {
 }
 
 if (localStorage.normalTower === undefined) localStorage.normalTower = '\uFFFF\uFFFF'
-if (localStorage.eventTower === undefined) localStorage.eventTower = '\0'
+if (localStorage.eventTower === undefined) localStorage.eventTower = '\1'
 
 var towers = []
 
