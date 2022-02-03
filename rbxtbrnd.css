@@ -8,6 +8,10 @@ table {
     align-items: center;
 }
 
+table#trophy-towers {
+    background-color: #eea404;
+}
+
 table button {
     color: white;
     margin: 1vmin;

@@ -3,8 +3,9 @@
 
 <div>
     <button onclick='genMap()'>Generate random map</button>
-    <span id='map'>Yes I want some UI designers</span>
-    <a href='https://github.com/TCLRainbow/RbxTBRnd/issues/new?labels=enhancement&template=new-tower-map.md'> | Missing towers/maps?</a>
+    <span id='map'>Yes I want some UI designer</span>
+    <span> | </span>
+    <a href='https://github.com/TCLRainbow/RbxTBRnd/issues/new?labels=enhancement&template=new-tower-map.md'>Missing towers/maps?</a>
 </div>
 
 <hr>
@@ -43,16 +44,23 @@
 <p>Event towers:</p>
 <table id='event-towers'>
     <tr>
-        <td><button onclick="flipTower(event, 0, 0, false)">Tweeter</button></td>
-        <td><button onclick="flipTower(event, 0, 1, false)">Scare crow</button></td>
-        <td><button onclick="flipTower(event, 0, 2, false)">Elf</button></td>
-        <td><button onclick="flipTower(event, 0, 3, false)">Hallowboomer</button></td>
-        <td><button onclick="flipTower(event, 0, 4, false)">Sleeter</button></td>
-        <td><button onclick="flipTower(event, 0, 5, false)">Resting Soldier</button></td>
-        <td><button onclick="flipTower(event, 0, 6, false)">Graveyard</button></td>
-        <td><button onclick="flipTower(event, 0, 7, false)">Snowballer</button></td>
-        <td><button onclick="flipTower(event, 0, 8, false)">Monkey</button></td>
-        <td><button onclick="flipTower(event, 0, 9, false)">Harpoon Hunter</button></td>
+        <td><button onclick="flipTower(event, 0, 0, 1)">Tweeter</button></td>
+        <td><button onclick="flipTower(event, 0, 1, 1)">Scare crow</button></td>
+        <td><button onclick="flipTower(event, 0, 2, 1)">Elf</button></td>
+        <td><button onclick="flipTower(event, 0, 3, 1)">Hallowboomer</button></td>
+        <td><button onclick="flipTower(event, 0, 4, 1)">Sleeter</button></td>
+        <td><button onclick="flipTower(event, 0, 5, 1)">Resting Soldier</button></td>
+        <td><button onclick="flipTower(event, 0, 6, 1)">Graveyard</button></td>
+        <td><button onclick="flipTower(event, 0, 7, 1)">Snowballer</button></td>
+        <td><button onclick="flipTower(event, 0, 8, 1)">Monkey</button></td>
+        <td><button onclick="flipTower(event, 0, 9, 1)">Harpoon Hunter</button></td>
+    </tr>
+</table>
+<p>Trophy towers:</p>
+<table id='trophy-towers'>
+    <tr>
+        <td><button onclick="flipTower(event, 0, 0, 2)">Golden Scout</button></td>
+        <td><button onclick="flipTower(event, 0, 1, 2)">Golden Commando</button></td>
     </tr>
 </table>
 <hr>

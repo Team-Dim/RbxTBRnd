@@ -40,6 +40,7 @@ function setColor(button, enable) {
 
 if (localStorage.normalTower === undefined) localStorage.normalTower = '\uFFFF\uFFFF'
 if (localStorage.eventTower === undefined) localStorage.eventTower = '\1'
+if (localStorage.trophyTower === undefined) localStorage.trophyTower = '\0'
 
 var towers = []
 
@@ -57,8 +58,20 @@ function initTower(tower, id) {
     }
 }
 
-function flipTower(event, pos, bit, isNormal = true) {
-    let tower = isNormal ? localStorage.normalTower : localStorage.eventTower
+function flipTower(event, pos, bit, towerCatId = 0) {
+    let towerCat
+    switch (towerCatId) {
+        case 0:
+            towerCat = "normal"
+            break
+        case 1:
+            towerCat = "event"
+            break
+        default:
+            towerCat = "trophy"
+    }
+    towerCat += 'Tower'
+    let tower = localStorage.getItem(towerCat)
     let ascii = tower.charCodeAt(pos)
     let cmp = 1 << bit
     ascii ^= cmp
@@ -66,8 +79,7 @@ function flipTower(event, pos, bit, isNormal = true) {
     setColor(event.target, enable)
     if (enable) towers.push(event.target.textContent)
     else towers.splice(towers.indexOf(event.target.textContent), 1);
-    if (isNormal) localStorage.normalTower = setCharAt(tower, pos, String.fromCharCode(ascii))
-    else localStorage.eventTower = setCharAt(tower, pos, String.fromCharCode(ascii))
+    localStorage.setItem(towerCat, setCharAt(tower, pos, String.fromCharCode(ascii)))
 }
 
 function genTowers() {
@@ -84,4 +96,5 @@ function genTowers() {
 document.addEventListener("DOMContentLoaded", () => {
     initTower(localStorage.normalTower, 'normal-towers')
     initTower(localStorage.eventTower, 'event-towers')
+    initTower(localStorage.trophyTower, 'trophy-towers')
 });
