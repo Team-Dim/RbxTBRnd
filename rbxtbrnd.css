@@ -16,3 +16,10 @@ table button {
     color: white;
     margin: 1vmin;
 }
+
+div#log {
+    font-size: large;
+    position: fixed;
+    bottom: 0;
+    right: 1%;
+}

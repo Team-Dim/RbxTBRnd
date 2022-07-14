@@ -8,6 +8,7 @@ const maps = [
     'Way Out',
     'City',
     'Venus',
+    'Sunsetbay Harbor',
     'Canyon',
     'Pond',
     'Intimidator',
