@@ -18,7 +18,10 @@ table button {
 }
 
 div#log {
-    font-size: large;
+    background-image: url(https://img.freepik.com/free-vector/hand-drawn-4th-july-independence-day-illustration_23-2148960997.jpg);
+    background-size: 100% 100%;
+    font-size: 200%;
+    text-shadow: 0 0 1px white, 0 0 1px white, 0 0 1px white;
     position: fixed;
     bottom: 0;
     right: 1%;
